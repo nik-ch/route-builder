@@ -1,0 +1,45 @@
+.wrapper {
+    margin: auto;
+    width: 800px;
+}
+  
+.input-column {
+    width: 25%;
+    display: inline-block;
+}
+
+.map-column {
+    width: 70%;
+    float: right;
+}
+
+.yandex-map {
+    width: 100%;
+    height: 450px;
+}
+
+.route-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.route-point {
+    border: 1px solid black;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.route-point.over {
+    border: 2px dashed black;   
+}
+
+.remove-cross {
+    float: right;
+}
+
+
+.check-div {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
