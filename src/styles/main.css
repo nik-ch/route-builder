@@ -12,20 +12,35 @@ body {
 
 .wrapper {
     margin: auto;
-    width: 960px;
     height: 100%;
     box-sizing: border-box;
-    padding: 15px 10px;
+    padding: 15px 10px 15px 3px;
 }
 .wrapper__route-points-list {
     float: left;
-    width: 290px;
     height: 100%;
+    width: 35%;
 }
 .wrapper__yandex-map {
     float: right;
-    width: 640px;
     height: 100%;
+    width: 65%;
+}
+
+@media only screen and (max-width: 320px) {
+    .route-points-list__input {
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    .wrapper {
+        width: 960px;
+    }
 }
 
 
