@@ -33,12 +33,6 @@ export default class YandexMap extends React.Component {
         }
     }
 
-    swapPlacemarks(fromPlacemark, toPlacemark) {
-        const fromCoordinates = fromPlacemark.geometry.getCoordinates();
-        fromPlacemark.geometry.setCoordinates(toPlacemark.geometry.getCoordinates());
-        toPlacemark.geometry.setCoordinates(fromCoordinates);
-    }
-
     removePlacemark(placemark) {
         this.yandexMap.geoObjects.remove(placemark);
     }

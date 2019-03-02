@@ -63,7 +63,6 @@ class App extends React.Component {
             .concat(fromPoint)
             .concat(currentRoutePoints.slice(to + 1));
 
-        this.yandexMapRef.current.swapPlacemarks(fromPoint.placemark, toPoint.placemark);
         this.yandexMapRef.current.updatePolyline(routePoints.map(rp => rp.placemark));
 
         this.setState({
