@@ -1,5 +1,7 @@
 import React from "react";
 
+import RoutePoint from "./route-point";
+
 export default class RoutePointsList extends React.Component {
 
     onDragStart(e, index) {
@@ -45,18 +47,18 @@ export default class RoutePointsList extends React.Component {
 
     render() {
         const routePoints = this.props.routePoints.map((p, ind) => (
-            <div key={p.id} className={"route-point list__route-point"} draggable="true"
-                onDragStart={(e) => this.onDragStart(e, ind)}
-                onDragEnd={this.onDragEnd}
-                onDragEnter={this.onDragEnter}
-                onDragLeave={this.onDragLeave}
-                onDragOver={this.onDragOver}
-                onDrop={(e) => this.onDrop(e, ind)}
-            >
-                <span className={"route-point__name"}>{p.name}</span>
-                <span className={"route-point__remove-cross"} title={"Remove route point"} 
-                    onClick={() => this.props.onRemovePointHandler(ind)}>x</span>
-            </div>
+            <RoutePoint key={p.id} name={p.name}
+                geoDataShown={p.geoDataShown}
+                geoData={p.geoData}
+                onDragStartHandler={(e) => this.onDragStart(e, ind)}
+                onDragEnterHandler={this.onDragEnter}
+                onDragEndHandler={this.onDragEnd}
+                onDragLeaveHandler={this.onDragLeave}
+                onDragOverHandler={this.onDragOver}
+                onDropHandler={(e) => this.onDrop(e, ind)}
+                onClickHandler={() => this.props.onClickHandler(ind)}
+                onRemoveHandler={() => this.props.onRemovePointHandler(ind)}
+            />
         ));
 
         return (
