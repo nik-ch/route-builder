@@ -38,7 +38,7 @@ export default class RoutePointsList extends React.Component {
     }
 
     onInputKeyUp = (event) => {
-        if(event.keyCode !== 13) {
+        if(event.keyCode !== 13 || !event.target.value) {
             return;
         }
         this.props.onNameSetHandler(event.target.value);

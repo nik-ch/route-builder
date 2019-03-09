@@ -22,12 +22,12 @@ const RoutePoint = (props) => {
             <div className={"route-point__main-info"}>
                 <span className={"route-point__name"}>{props.name}</span>
                 <span className={"route-point__remove-cross"} title={"Remove route point"} 
-                    onClick={onRemoveClickHandler}>x</span>
+                    onClick={onRemoveClickHandler}>✖</span>
             </div>
             <div className={"route-point__address-link"} onClick={props.onClickHandler}>
                 {showGeoData ? "Hide address" : "View address"}
             </div>
-            <div className={`route-point__geo-data-info${showGeoData && " route-point__geo-data-info_shown" || ""}`}>
+            <div className={`route-point__geo-data-info${(showGeoData && " route-point__geo-data-info_shown") || ""}`}>
                 {showGeoData && `${props.geoData.name}. ${props.geoData.description}.`}
             </div>
         </div>

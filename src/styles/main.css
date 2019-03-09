@@ -115,6 +115,13 @@ body {
     pointer-events: none;
 }
 
+.notification-container {
+    padding: 0 !important;
+}
+.notification-container__notification-body {
+    margin-right: 10px;
+}
+
 
 .yandex-map {
     width: 100%;

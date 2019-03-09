@@ -32,7 +32,7 @@ export default class DragAndDropTouch {
      */
     static createHandlers() {
         if(DragAndDropTouch._instance) {
-            throw new Error("DragAndDropTouch instance already created");
+            return;
         }
         
         DragAndDropTouch._instance = new (class {
