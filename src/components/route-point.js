@@ -10,8 +10,16 @@ const RoutePoint = (props) => {
 
     const showGeoData = props.geoDataShown && props.geoData;
 
+    let rpClassName = "route-point list__route-point";
+    if(props.dragStarted) {
+        rpClassName += " list__route-point_drag-started";
+    }
+    if(props.dragEntered) {
+        rpClassName += " list__route-point_drag-entered";
+    }
+
     return (
-        <div className={"route-point list__route-point"} draggable="true"
+        <div className={rpClassName} draggable="true"
             onDragStart={props.onDragStartHandler}
             onDragEnd={props.onDragEndHandler}
             onDragEnter={props.onDragEnterHandler}

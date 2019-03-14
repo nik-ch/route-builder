@@ -31,15 +31,13 @@ export default class App extends React.Component {
             const routePoint = { name, id, placemark };
             const routePoints = this.state.routePoints.slice().concat(routePoint);
             this.ymapApiWrapper.updatePolyline(routePoints.map(rp => rp.placemark));
-    
+            
             this.setState({
                 routePoints,
                 lastUsedId: id
             });
         } catch(error) {
-            toast("Error occurred during adding placemark.", 
-                { type: toast.TYPE.ERROR, bodyClassName: "notification-container__notification-body" }
-            );
+            this.showErrorToast("Error occurred during adding placemark.");
         }
     }
 
@@ -53,9 +51,7 @@ export default class App extends React.Component {
     
             this.setState({ routePoints });
         } catch(error) {
-            toast("Error occurred during dragging placemark.", 
-                { type: toast.TYPE.ERROR, bodyClassName: "notification-container__notification-body" }
-            );
+            this.showErrorToast("Error occurred during dragging placemark.");
         }
     }
 
@@ -69,9 +65,7 @@ export default class App extends React.Component {
     
             this.setState({ routePoints });
         } catch(error) {
-            toast("Error occurred during removing placemark.", 
-                { type: toast.TYPE.ERROR, bodyClassName: "notification-container__notification-body" }
-            );
+            this.showErrorToast("Error occurred during removing placemark.");
         }
     } 
 
@@ -94,9 +88,7 @@ export default class App extends React.Component {
     
             this.setState({ routePoints });
         } catch(error) {
-            toast("Error occurred during swapping placemarks.", 
-                { type: toast.TYPE.ERROR, bodyClassName: "notification-container__notification-body" }
-            );
+            this.showErrorToast("Error occurred during swapping placemarks.");
         }
     }
 
@@ -107,26 +99,33 @@ export default class App extends React.Component {
             const placemark = routePoint.placemark;
     
             const toggleGeoData = () => {
-                routePoint.geoDataShown = !routePoint.geoDataShown;
-                this.ymapApiWrapper.togglePlacemarkFocus(placemark, routePoint.geoDataShown);
-    
+                const newGeoDataShownState = !routePoint.geoDataShown;
+                this.ymapApiWrapper.togglePlacemarkFocus(placemark, newGeoDataShownState);
+                routePoint.geoDataShown = newGeoDataShownState;
+
                 this.setState({ routePoints });
             }
             
             if(!routePoint.geoDataShown && !routePoint.geoData) {
-                routePoint.geoDataShown = true;
-                this.ymapApiWrapper.togglePlacemarkFocus(placemark, routePoint.geoDataShown);
+                const newGeoDataShownState = true;
+                this.ymapApiWrapper.togglePlacemarkFocus(placemark, newGeoDataShownState);
                 routePoint.geoData = await this.ymapApiWrapper.getPlacemarkGeographicAddress(placemark);
+                routePoint.geoDataShown = newGeoDataShownState;
                 
                 this.setState({ routePoints });
             } else {
                 toggleGeoData();
             }
         } catch(error) {
-            toast("Error occurred during loading geographic address.", 
-                { type: toast.TYPE.ERROR, bodyClassName: "notification-container__notification-body" }
-            );
+            this.showErrorToast("Error occurred during loading geographic address.");
         }
+    }
+
+    showErrorToast(errorText) {
+        toast(errorText, { 
+            type: toast.TYPE.ERROR, 
+            bodyClassName: "notification-container__notification-body" 
+        });
     }
 
     render() {

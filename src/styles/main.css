@@ -27,9 +27,12 @@ body {
     width: 65%;
 }
 
-@media only screen and (max-width: 320px) {
-    .route-points-list__input {
-        font-size: 11px;
+@media only screen and (max-width: 426px) {
+    .wrapper__route-points-list {
+        width: 40%;
+    }
+    .wrapper__yandex-map {
+        width: 60%;
     }
 }
 @media only screen and (max-width: 1024px) {

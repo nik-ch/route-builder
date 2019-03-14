@@ -4,22 +4,33 @@ import RoutePoint from "./route-point";
 
 export default class RoutePointsList extends React.Component {
 
-    onDragStart(e, index) {
-        e.currentTarget.classList.add("list__route-point_drag-started");
-        e.dataTransfer.effectAllowed = "move";
-        e.dataTransfer.setData("text/plain", index);
+    state = {
+        startIndex: null,
+        enterIndex: null
+    };
+
+    onDragStart = (index) => {
+        this.setState({
+            startIndex: index
+        });
     }
 
-    onDragEnd(e) {
-        e.currentTarget.classList.remove("list__route-point_drag-started");
+    onDragEnd = () => {
+        this.setState({
+            startIndex: null
+        });
     }
 
-    onDragEnter(e) {
-        e.currentTarget.classList.add("list__route-point_drag-entered");
+    onDragEnter = (index) => {
+        this.setState({
+            enterIndex: index
+        })
     }
 
-    onDragLeave(e) {
-        e.currentTarget.classList.remove("list__route-point_drag-entered");
+    onDragLeave = () => {
+        this.setState({
+            enterIndex: null
+        });
     }
 
     onDragOver(e) {
@@ -29,12 +40,13 @@ export default class RoutePointsList extends React.Component {
         return false;
     }
 
-    onDrop(e, index) {
-        let startIndex = +e.dataTransfer.getData("text/plain");
-        if(index !== startIndex) {
-            this.props.onPointDropHandler(startIndex, index);
+    onDrop = (index) => {
+        if(this.state.startIndex !== index) {
+            this.props.onPointDropHandler(this.state.startIndex, index);
         }
-        e.currentTarget.classList.remove("list__route-point_drag-entered");
+        this.setState({
+            enterIndex: null
+        });
     }
 
     onInputKeyUp = (event) => {
@@ -50,12 +62,14 @@ export default class RoutePointsList extends React.Component {
             <RoutePoint key={p.id} name={p.name}
                 geoDataShown={p.geoDataShown}
                 geoData={p.geoData}
-                onDragStartHandler={(e) => this.onDragStart(e, ind)}
-                onDragEnterHandler={this.onDragEnter}
+                dragStarted={this.state.startIndex === ind}
+                dragEntered={this.state.enterIndex === ind}
+                onDragStartHandler={() => this.onDragStart(ind)}
+                onDragEnterHandler={() => this.onDragEnter(ind)}
                 onDragEndHandler={this.onDragEnd}
                 onDragLeaveHandler={this.onDragLeave}
                 onDragOverHandler={this.onDragOver}
-                onDropHandler={(e) => this.onDrop(e, ind)}
+                onDropHandler={() => this.onDrop(ind)}
                 onClickHandler={() => this.props.onClickHandler(ind)}
                 onRemoveHandler={() => this.props.onRemovePointHandler(ind)}
             />
