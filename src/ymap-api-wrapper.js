@@ -2,10 +2,13 @@ import axios from "axios";
 
 export default class YandexMapApiWrapper {
 
-    constructor(mapContainerRef) {
+    createMap(mapContainerRef, centerCoordinates, zoom) {
+        if(this.yandexMap) {
+            throw new Error("yandex map instance already exists");
+        }
         this.yandexMap = new window.ymaps.Map(mapContainerRef, {
-            center: [55.75136970917547, 37.61889271429428],
-            zoom: 15
+            center: centerCoordinates,
+            zoom
         });
     }
 
@@ -24,9 +27,9 @@ export default class YandexMapApiWrapper {
 
     updatePolyline(placemarks) {
         if(this.polyline != null) {
-            this.polyline.geometry.setCoordinates([...placemarks.map(p => p.geometry.getCoordinates())]);
+            this.polyline.geometry.setCoordinates(placemarks.map(p => p.geometry.getCoordinates()));
         } else if(placemarks.length > 1) {
-            this.polyline = new window.ymaps.Polyline([...placemarks.map(p => p.geometry.getCoordinates())]);
+            this.polyline = new window.ymaps.Polyline(placemarks.map(p => p.geometry.getCoordinates()));
             this.yandexMap.geoObjects.add(this.polyline);
         }
     }

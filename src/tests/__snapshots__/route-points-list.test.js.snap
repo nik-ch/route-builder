@@ -1,0 +1,466 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Handles drag events correctly Blurs route point on dragstart 1`] = `
+<div
+  className="route-points-list"
+>
+  <div
+    className="route-points-list__input-wrapper"
+  >
+    <input
+      className="route-points-list__input"
+      onKeyUp={[Function]}
+      placeholder="New route point"
+      type="text"
+    />
+  </div>
+  <div
+    className="list"
+  >
+    <div
+      className="route-point list__route-point list__route-point_drag-started"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 1
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 2
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Handles drag events correctly Highlights route point on dragenter 1`] = `
+<div
+  className="route-points-list"
+>
+  <div
+    className="route-points-list__input-wrapper"
+  >
+    <input
+      className="route-points-list__input"
+      onKeyUp={[Function]}
+      placeholder="New route point"
+      type="text"
+    />
+  </div>
+  <div
+    className="list"
+  >
+    <div
+      className="route-point list__route-point list__route-point_drag-started"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 1
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+    <div
+      className="route-point list__route-point list__route-point_drag-entered"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 2
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Handles drag events correctly Removes blur from route point on dragend 1`] = `
+<div
+  className="route-points-list"
+>
+  <div
+    className="route-points-list__input-wrapper"
+  >
+    <input
+      className="route-points-list__input"
+      onKeyUp={[Function]}
+      placeholder="New route point"
+      type="text"
+    />
+  </div>
+  <div
+    className="list"
+  >
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 1
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 2
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Handles drag events correctly Removes highlight from route point on dragleave 1`] = `
+<div
+  className="route-points-list"
+>
+  <div
+    className="route-points-list__input-wrapper"
+  >
+    <input
+      className="route-points-list__input"
+      onKeyUp={[Function]}
+      placeholder="New route point"
+      type="text"
+    />
+  </div>
+  <div
+    className="list"
+  >
+    <div
+      className="route-point list__route-point list__route-point_drag-started"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 1
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 2
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders correctly 1`] = `
+<div
+  className="route-points-list"
+>
+  <div
+    className="route-points-list__input-wrapper"
+  >
+    <input
+      className="route-points-list__input"
+      onKeyUp={[Function]}
+      placeholder="New route point"
+      type="text"
+    />
+  </div>
+  <div
+    className="list"
+  >
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 1
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+    <div
+      className="route-point list__route-point"
+      draggable="true"
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      onDrop={[Function]}
+    >
+      <div
+        className="route-point__main-info"
+      >
+        <span
+          className="route-point__name"
+        >
+          name 2
+        </span>
+        <span
+          className="route-point__remove-cross"
+          onClick={[Function]}
+          title="Remove route point"
+        >
+          ✖
+        </span>
+      </div>
+      <div
+        className="route-point__address-link"
+        onClick={[Function]}
+      >
+        View address
+      </div>
+      <div
+        className="route-point__geo-data-info"
+      />
+    </div>
+  </div>
+</div>
+`;

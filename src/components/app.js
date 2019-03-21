@@ -15,12 +15,13 @@ export default class App extends React.Component {
             lastUsedId: 0
         };
         this.ymapId = "ymap";
+        this.ymapApiWrapper = new YandexMapApiWrapper();
         DragAndDropTouch.createHandlers();
     }
 
     componentDidMount() {
         window.addEventListener("load", () => {
-            this.ymapApiWrapper = new YandexMapApiWrapper(this.ymapId);
+            this.ymapApiWrapper.createMap(this.ymapId, [55.75136970917547, 37.61889271429428], 15);
         });
     }
 
@@ -31,7 +32,7 @@ export default class App extends React.Component {
             const routePoint = { name, id, placemark };
             const routePoints = this.state.routePoints.slice().concat(routePoint);
             this.ymapApiWrapper.updatePolyline(routePoints.map(rp => rp.placemark));
-            
+
             this.setState({
                 routePoints,
                 lastUsedId: id
@@ -41,6 +42,10 @@ export default class App extends React.Component {
         }
     }
 
+    /**
+     * Handles placemark drag ending. 
+     * @param id Route point id. 
+     */
     placemarkDragEndHandler = (id) => {
         try {
             const routePoints = this.state.routePoints;
@@ -55,6 +60,10 @@ export default class App extends React.Component {
         }
     }
 
+    /**
+     * Removes route point from the list and the map.
+     * @param ind Index of the route point in the route points list. 
+     */
     removeRoutePoint = (ind) => {
         try {
             const currentRoutePoints = this.state.routePoints;
@@ -62,13 +71,18 @@ export default class App extends React.Component {
             const routePoints = currentRoutePoints.slice(0, ind).concat(currentRoutePoints.slice(ind+1));
             this.ymapApiWrapper.removePlacemark(placemarkToRemove);
             this.ymapApiWrapper.updatePolyline(routePoints.map(rp => rp.placemark));
-    
+
             this.setState({ routePoints });
         } catch(error) {
             this.showErrorToast("Error occurred during removing placemark.");
         }
     } 
 
+    /**
+     * Swaps two points in the route points list.
+     * @param fromInd "From" index in the route points list.
+     * @param toInd "To" index in the route points list.
+     */
     swapRoutePoints = (fromInd, toInd) => {
         try{
             const from = Math.min(fromInd, toInd);
@@ -92,6 +106,10 @@ export default class App extends React.Component {
         }
     }
 
+    /**
+     * Loads geographic data for the route point.
+     * @param ind Index of the route point in the route points list.
+     */
     getGeographicAddress = async (ind) => {
         try {
             const routePoints = this.state.routePoints;

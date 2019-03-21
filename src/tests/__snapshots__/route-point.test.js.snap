@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly when drag entered 1`] = `
+<div
+  className="route-point list__route-point list__route-point_drag-entered"
+  draggable="true"
+>
+  <div
+    className="route-point__main-info"
+  >
+    <span
+      className="route-point__name"
+    />
+    <span
+      className="route-point__remove-cross"
+      onClick={[Function]}
+      title="Remove route point"
+    >
+      ✖
+    </span>
+  </div>
+  <div
+    className="route-point__address-link"
+  >
+    View address
+  </div>
+  <div
+    className="route-point__geo-data-info"
+  />
+</div>
+`;
+
+exports[`Renders correctly when drag started 1`] = `
+<div
+  className="route-point list__route-point list__route-point_drag-started"
+  draggable="true"
+>
+  <div
+    className="route-point__main-info"
+  >
+    <span
+      className="route-point__name"
+    />
+    <span
+      className="route-point__remove-cross"
+      onClick={[Function]}
+      title="Remove route point"
+    >
+      ✖
+    </span>
+  </div>
+  <div
+    className="route-point__address-link"
+  >
+    View address
+  </div>
+  <div
+    className="route-point__geo-data-info"
+  />
+</div>
+`;
+
+exports[`Renders correctly with geo data provided 1`] = `
+<div
+  className="route-point list__route-point"
+  draggable="true"
+>
+  <div
+    className="route-point__main-info"
+  >
+    <span
+      className="route-point__name"
+    />
+    <span
+      className="route-point__remove-cross"
+      onClick={[Function]}
+      title="Remove route point"
+    >
+      ✖
+    </span>
+  </div>
+  <div
+    className="route-point__address-link"
+  >
+    Hide address
+  </div>
+  <div
+    className="route-point__geo-data-info route-point__geo-data-info_shown"
+  >
+    name. description.
+  </div>
+</div>
+`;
+
+exports[`Renders correctly without geo data 1`] = `
+<div
+  className="route-point list__route-point"
+  draggable="true"
+>
+  <div
+    className="route-point__main-info"
+  >
+    <span
+      className="route-point__name"
+    />
+    <span
+      className="route-point__remove-cross"
+      onClick={[Function]}
+      title="Remove route point"
+    >
+      ✖
+    </span>
+  </div>
+  <div
+    className="route-point__address-link"
+  >
+    View address
+  </div>
+  <div
+    className="route-point__geo-data-info"
+  />
+</div>
+`;

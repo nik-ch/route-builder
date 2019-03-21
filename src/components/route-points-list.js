@@ -58,7 +58,7 @@ export default class RoutePointsList extends React.Component {
     }
 
     render() {
-        const routePoints = this.props.routePoints.map((p, ind) => (
+        const routePoints = (this.props.routePoints || []).map((p, ind) => (
             <RoutePoint key={p.id} name={p.name}
                 geoDataShown={p.geoDataShown}
                 geoData={p.geoData}
